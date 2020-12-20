@@ -43,7 +43,14 @@ for i in range(0, N - 1):
                                 res2 = minimize(f, z2, method='SLSQP',
                                                 options={'disp': True}, bounds=bounds, tol=1e-6)
                                 curmin = min(res1.fun, res2.fun)
+                                if curmin == res1.fun:
+                                    z=res1.x
+                                else:
+                                    z=res2.x
                                 if curmin > maximin:
+                                    c=z
+                                    a=x[0],x[1],x[2],x[3]
+                                    b=y[0],y[1],y[2],y[3]
                                     maximin = curmin
 
-print(maximin)
+print(maximin, a, b, c)
