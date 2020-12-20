@@ -11,7 +11,6 @@ def f(param):
 
 
 N = 4
-# z0 = (0, 0)
 z1 = (1, 0)
 z2 = (1, 1)
 maximin = 0
@@ -36,8 +35,6 @@ for i in range(0, N - 1):
                             x[3] = -1 + (2 * p + 1.0) / N
                             for q in range(0, N - 1):
                                 y[3] = -1 + (2 * q + 1.0) / N
-                                # res0 = minimize(f, z0, method='SLSQP',
-                                #            options={'disp': True}, bounds=bounds, tol=1e-6)
                                 res1 = minimize(f, z1, method='SLSQP',
                                                 options={'disp': True}, bounds=bounds, tol=1e-6)
                                 res2 = minimize(f, z2, method='SLSQP',
